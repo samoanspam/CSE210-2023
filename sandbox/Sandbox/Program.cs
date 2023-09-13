@@ -6,6 +6,14 @@ class Program
     {
         System.Console.WriteLine("What is your favorite color? ");
         string color= Console.ReadLine();
-        System.Console.WriteLine(color);
+
+        if (color == "red")
+        {
+            System.Console.WriteLine("That's my favorite color too! ");
+        }
+        else
+        {
+            System.Console.WriteLine("That's cool! ");
+        }
     }
 }
