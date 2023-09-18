@@ -31,15 +31,15 @@ class Program
 
         if (number1 > number2)
         {
-            System.Console.WriteLine("greater than y");
+            System.Console.WriteLine("Your first number is greater than the second. ");
         }
         else if (number1 < number2)
         {
-            System.Console.WriteLine("greater than x");
+            System.Console.WriteLine("Your second number is greater than the first. ");
         }
         else
         {
-            System.Console.WriteLine("less than both");
+            System.Console.WriteLine("I don't know about this one... ");
         }
     }
 }
