@@ -6,6 +6,8 @@ class Program
         int x = 5;
         int y = 4;
         string name;
+        int number1;
+        int number2;
 
         System.Console.WriteLine("What is your name? ");
 
@@ -21,11 +23,17 @@ class Program
         }
 
 
-        if (x > y)
+        System.Console.WriteLine("Give me a number");
+        number1 = Convert.ToInt32(Console.ReadLine());
+
+        System.Console.WriteLine("Give me another number");
+        number2 = Convert.ToInt32(Console.ReadLine());
+
+        if (number1 > number2)
         {
             System.Console.WriteLine("greater than y");
         }
-        if (x < y)
+        else if (number1 < number2)
         {
             System.Console.WriteLine("greater than x");
         }
