@@ -16,21 +16,21 @@ class Program
             string choice = Console.ReadLine();
             if (choice == "1")
             {
-                // Entry.AddEntry();
+                Entry.AddEntry();
             }
             else if (choice == "2")
             {
-                // Journal.DisplayJournal();
+                Journal.DisplayJournal();
             }
             else if (choice == "3")
             {
-                // Console.Write("Enter the filename: ");
-                // string fileName = Console.ReadLine();
-                // Journal.SaveJournal();
+                Console.Write("Enter the filename: ");
+                string fileName = Console.ReadLine();
+                Journal.SaveJournal();
             }
             else if (choice == "4")
             {
-                // Journal.DeleteJournal();
+                Journal.DeleteJournal();
             }
             else if (choice == "5")
             {
