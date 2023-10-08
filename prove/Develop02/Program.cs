@@ -1,3 +1,9 @@
+//Name: My Journal
+//Purpose: The purpose of this program is to have the user(s) of the program be able to record thier impressions and feelings
+//given unique prompts at random and then save it to a file for the user to access in the future. Also to delete all if in state of emergency.
+//Team: Teia Patane
+//Date: 10/6/2023
+
 using System;
 using System.IO;
 
