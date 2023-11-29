@@ -42,7 +42,6 @@ class Journal
         }
     }
 
-// Reach file line by line, creates each Journal Object and adds it to list
 static public void LoadJournal()
 {
     Console.Write("Please enter the file name to load: ");
@@ -53,9 +52,10 @@ static public void LoadJournal()
     string[] lines = File.ReadAllLines(fileName);
     foreach (string line in lines)
     {
-        if (line == "" || line == null) continue; // Skip empty lines
+        if (line == "" || line == null) continue;
 
         string[] parts = line.Split('|');
+        
         if (parts.Length == 3) // Ensure there are three parts
         {
             Journal entry = new Journal
@@ -73,13 +73,11 @@ static public void LoadJournal()
 
 static public void DeleteJournal()
 {
-    // Prompt the user to enter the filename they want to clear.
     Console.Write("Enter the filename you want to clear: ");
     string fileName = Console.ReadLine();
 
     journal.Clear(); //Clear Journal
 
-    // Check if the file exists before trying to clear it.
     if (File.Exists(fileName))
     {
         // Clears the contents of the file by writing an empty string to it.
@@ -88,7 +86,6 @@ static public void DeleteJournal()
     }
     else
     {
-        // Inform the user if the file does not exist.
         Console.WriteLine("File not found. Please make sure the filename is correct.");
     }
 }
