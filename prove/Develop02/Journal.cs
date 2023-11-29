@@ -16,11 +16,11 @@ class Journal
             Console.WriteLine();
         }
 
-        foreach (Journal entry in journal)
+        foreach (Journal listing in journal)
         {
-            Console.WriteLine("Prompt: " + entry.Prompt);
-            Console.WriteLine("Response: " + entry.Response);
-            Console.WriteLine("Date: " + entry.Date);
+            Console.WriteLine("Prompt: " + listing.Prompt);
+            Console.WriteLine("Response: " + listing.Response);
+            Console.WriteLine("Date: " + listing.Date);
             Console.WriteLine();
         }
     }
@@ -32,6 +32,7 @@ class Journal
         Console.Write("Please enter a file name:");
         string fileName = Console.ReadLine();
 
+        // I don't know what "using" does or StreamWriter object/class
         using (StreamWriter writer = new StreamWriter(fileName))
         {
             foreach (Journal entry in journal)
@@ -53,7 +54,7 @@ static public void LoadJournal()
     foreach (string line in lines)
     {
         if (line == "" || line == null) continue;
-
+    // Possible edge case if user uses "|" in entry
         string[] parts = line.Split('|');
         
         if (parts.Length == 3) // Ensure there are three parts
@@ -84,6 +85,8 @@ static public void DeleteJournal()
         File.WriteAllText(fileName, String.Empty);
         Console.WriteLine("All contents of your Journal have been cleared.");
     }
+        //Not using a while loop to check for fileName because it'll force you to delete if accidental input,
+        //
     else
     {
         Console.WriteLine("File not found. Please make sure the filename is correct.");
