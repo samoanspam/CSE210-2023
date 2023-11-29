@@ -13,7 +13,8 @@ class Prompt
 
         static public string GetPrompt()
         {
-            Random randomPrompt = new Random();
+            
+        Random randomPrompt = new Random();
         int index = randomPrompt.Next(prompts.Count);
         string prompt = prompts[index];
 
