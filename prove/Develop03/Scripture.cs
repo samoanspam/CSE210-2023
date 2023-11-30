@@ -2,7 +2,7 @@ using System;
 
 class Scripture
 {
-    private static List<Verse> _verses = new List<Verse>();
+    private static List<Reference> _verses = new List<Reference>();
     private static bool _hidden = false;
     // private static string _scriptureVerse;
 
@@ -11,7 +11,7 @@ class Scripture
         // _scriptureVerse = scriptureVerse;
         foreach(string verseStr in verses)
         {
-            Verse verse = new Verse(verseStr);
+            Reference verse = new Reference(verseStr);
             _verses.Add(verse);
         }
         _hidden = false;
@@ -19,7 +19,7 @@ class Scripture
     public static void Display()
     {
         // System.Console.WriteLine(_scriptureVerse);
-        foreach (Verse verse in _verses)
+        foreach (Reference verse in _verses)
         {
             verse.Display();
         }
@@ -35,7 +35,7 @@ class Scripture
             Random random = new Random();
             int index = random.Next(_verses.Count());
 
-            Verse verse = new Verse();
+            Reference verse = new Reference();
             verse = _verses[index];
 
             if (verse.HideWord() == true)
@@ -56,7 +56,7 @@ class Scripture
 
     public static bool IsAllHidden()
     {
-        foreach (Verse verse in _verses)
+        foreach (Reference verse in _verses)
         {
             if (verse.IsAllHidden() == false)
             {
@@ -69,7 +69,7 @@ class Scripture
 
     public void ClearAll()
     {
-        foreach (Verse verse in _verses)
+        foreach (Reference verse in _verses)
         {
             verse.ClearAll();
             _hidden = true;

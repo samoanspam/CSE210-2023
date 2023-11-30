@@ -1,15 +1,15 @@
 using System;
 
-class Verse
+class Reference
 {
     private List<Word> _words = new List <Word>();
     private bool _hidden;
 
-    public Verse()
+    public Reference()
     {
         // Blank Constructor
     }
-    public Verse(string verse)
+    public Reference(string verse)
     {
         // foreach (string wordStr in verse.Split(' '))
         // {
