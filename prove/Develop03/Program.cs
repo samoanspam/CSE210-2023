@@ -17,6 +17,7 @@ class Program
             "things which the Lord seeth fit to inflict upon him, even as a child doth submit to his father"
         };
 
+
         // Random number of words chosen randomly from each row at random. 
         Random random = new Random();
         int number = random.Next(1,4);
