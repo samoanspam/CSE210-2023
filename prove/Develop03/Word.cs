@@ -1,42 +1,26 @@
-using System;
-
-class Word
+public class Word
 {
-    private string _text;
-    private bool _hidden = false;
+    public string Text { get; private set; }
+    public bool IsHidden { get; set; }
 
-    public Word()
-    {
-        // Blank Constructor
-    }
     public Word(string text)
     {
-        _text = text;
-        _hidden = false;
+        Text = text;
+        IsHidden = false;
     }
 
-    public void Display()
+    //TODO: Check how long word is
+    //replace each letter with underscore
+    public override string ToString()
     {
-        if (_hidden == true)
-        {
-            foreach (char c in _text)
-            {
-                Console.Write('_');
-            }
-            
-        } else {
-            Console.Write(_text);
-        }
-        
-    }
+        return IsHidden ? "____" : Text;
 
-    public bool IsHidden()
-    {
-        return _hidden;
-    }
-
-    public void Clear()
-    {
-        _hidden = true;
+        //Above is shorthand for this
+        // if (IsHidden) {
+        //     return "_____";
+        // }
+        // else {
+        //     return Text;
+        // }
     }
 }

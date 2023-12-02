@@ -1,100 +1,37 @@
-using System;
-
-class Reference
+public class Reference
 {
-    private List<Word> _words = new List <Word>();
-    private bool _hidden;
+    public string Book { get; set; }
+    public int Chapter { get; set; }
+    public int StartVerse { get; set; }
+    public int? EndVerse { get; set; } // Nullable for single verse references
 
-    public Reference()
+    // Constructor for single verse
+    public Reference(string book, int chapter, int verse)
     {
-        // Blank Constructor
+        Book = book;
+        Chapter = chapter;
+        StartVerse = verse;
     }
-    public Reference(string verse)
+
+    // Constructor for a range of verses
+    public Reference(string book, int chapter, int startVerse, int endVerse)
     {
-        // foreach (string wordStr in verse.Split(' '))
-        // {
-        //     Word word = new Word(wordStr);
-        //     _words.Add(word);
+        Book = book;
+        Chapter = chapter;
+        StartVerse = startVerse;
+        EndVerse = endVerse;
+    }
+
+    public override string ToString()
+    {
+        return EndVerse.HasValue ? $"{Book} {Chapter}:{StartVerse}-{EndVerse}" : $"{Book} {Chapter}:{StartVerse}";
+
+        //Above is shorthand for this
+        // if (EndVerse.HasValue) {
+        //     return $"{Book} {Chapter}:{StartVerse}-{EndVerse}";
         // }
-
-        char[] delimiterchars = {' ', ',', '.', ':', '\t'};
-        string[] words = verse.Split(delimiterchars);
-        foreach (string wordStr in words)
-        {
-            Word word = new Word(wordStr);
-            _words.Add(word);
-        }
-
-        // _hidden = false;
-    }
-
-    public int RandomIndexes()
-    {
-        Random random = new Random();
-        int index = random.Next(_words.Count());
-
-        return index;
-    }
-
-    public void Display()
-    {
-        foreach (Word word in _words)
-        {
-            word.Display();
-            System.Console.Write(" ");
-        }
-        System.Console.WriteLine("");
-    }
-    
-    public bool HideWord()
-    {
-        int count = 0;
-        while (_hidden == false)
-        {
-            Word word = new Word();
-            int index = RandomIndexes();
-            word = _words[index];
-            count += 1;
-
-            if (word.IsHidden() == false)
-            {
-                word.Clear();
-                return true;
-            }
-            // * x Amount of Words
-            if (count > _words.Count() * 3)
-            {
-                return false;
-            }
-        }
-        return false;
-    }
-
-    public bool IsAllHidden()
-    {
-        if (_hidden == true)
-        {
-            return true;
-        } else {
-            foreach (Word word in _words)
-            {
-                if (word.IsHidden() == false)
-                {
-                    return false;
-                }
-            }
-                _hidden = true;
-
-                return _hidden;
-        }
-    }
-
-    public void ClearAll()
-    {
-        foreach (Word word in _words)
-        {
-            word.Clear();
-            _hidden = true;
-        }
+        // else {
+        //     return $"{Book} {Chapter}:{StartVerse}";
+        // }
     }
 }

@@ -1,30 +1,26 @@
-//Name: Scripture Memorizer
-//Purpose: The purpose of this program is help the user to come closer to Chirst by helping them memorize a scripture that is near and dear to me.
-//Team: Teia Patane
-//Date: 10/20/2023
-
-using System;
+﻿using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<string> verses = new List<string>
+        Scripture scripture = new Scripture("For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life.", new Reference("John", 3, 16));
+
+        while (true)
         {
-            "Mosiah Chapter 3 Verse 19",
-            "For the natural man is an enemy to God, and has been from the fall of Adam, and will be, forever and ever, unless he yields to the enticings of the Holy Spirit, and putteth ", 
-            "off the natural man and becometh a saint through the atonement of Christ the Lord, and becometh as a child, submissive, meek, humble, patient, full of love, willing to submit to all ",
-            "things which the Lord seeth fit to inflict upon him, even as a child doth submit to his father"
-        };
+            Console.Clear();
+            scripture.DisplayScripture();
 
+            Console.WriteLine("\nPress Enter to hide words, or type 'quit' to exit.");
+            string input = Console.ReadLine();
 
-        // Random number of words chosen randomly from each row at random. 
-        Random random = new Random();
-        int number = random.Next(1,4);
+            // Edge case: if user types something other than 'quit' what will happen?
+            if (input.ToLower() == "quit")
+                break;
 
-        Scripture scripture = new Scripture(verses);
-        Scripture.Display();
-        Scripture.HideWords(number);
-        Scripture.IsAllHidden();
+            //if all are hidden then quit
+            scripture.HideRandomWords();
+
+        }
     }
 }

@@ -1,78 +1,46 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-class Scripture
+public class Scripture
 {
-    private static List<Reference> _verses = new List<Reference>();
-    private static bool _hidden = false;
-    // private static string _scriptureVerse;
+    public Reference ScriptureReference { get; private set; }
+    private List<Word> Words;
 
-    public Scripture(List<string> verses)
+    public Scripture(string text, Reference reference)
     {
-        // _scriptureVerse = scriptureVerse;
-        foreach(string verseStr in verses)
-        {
-            Reference verse = new Reference(verseStr);
-            _verses.Add(verse);
-        }
-        _hidden = false;
-    }
-    public static void Display()
-    {
-        // System.Console.WriteLine(_scriptureVerse);
-        foreach (Reference verse in _verses)
-        {
-            verse.Display();
-        }
-
+        ScriptureReference = reference;
+        // Put your input
+        Words = text.Split(' ').Select(w => new Word(w)).ToList();
+        // string[] splitText = text.Split(' ');
+        // Words = new List<Word>();
+        // foreach (string wordText in splitText)
+        // {
+        //     Word word = new Word(wordText);
+        //     Words.Add(word);
+        // }
     }
 
-    public static bool HideWords(int count)
+    public void DisplayScripture()
     {
-        int number = 0;
-        int counter = 0;
-        while (number < count)
-        {
-            Random random = new Random();
-            int index = random.Next(_verses.Count());
-
-            Reference verse = new Reference();
-            verse = _verses[index];
-
-            if (verse.HideWord() == true)
-            {
-                number += 1;
-            }
-            counter += 1;
-            if (counter > 100)
-            {
-                _hidden = true;
-
-                return false;
-            }
-        }
-
-        return true;
+        Console.WriteLine(ScriptureReference.ToString());
+        Console.WriteLine(string.Join(" ", Words.Select(w => w.ToString())));
     }
 
-    public static bool IsAllHidden()
-    {
-        foreach (Reference verse in _verses)
-        {
-            if (verse.IsAllHidden() == false)
-            {
-                return false;
-            }
-        }
+    public void HideRandomWords()
+{
+    Random random = new Random();
+    int wordsToHide = random.Next(1, Words.Count / 4 + 1); // Hiding up to 1/4th of the words
 
-        return true;
-    }
-
-    public void ClearAll()
+    int hiddenCount = 0;
+    while (hiddenCount < wordsToHide)
     {
-        foreach (Reference verse in _verses)
+        int index = random.Next(Words.Count);
+        if (!Words[index].IsHidden)
         {
-            verse.ClearAll();
-            _hidden = true;
+            Words[index].IsHidden = true;
+            hiddenCount++;
         }
     }
+}
 }
