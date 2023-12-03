@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Poop");
-
-        Scripture.Poop();
+        Console.WriteLine("Hello Develop04 World!");
     }
 }
