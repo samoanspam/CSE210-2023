@@ -21,6 +21,7 @@ class Program
             //if all are hidden then quit
             scripture.HideRandomWords();
 
+
         }
     }
 }

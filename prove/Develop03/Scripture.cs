@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 public class Scripture
 {
@@ -15,8 +16,9 @@ public class Scripture
     public Scripture(string text, Reference reference)
     {
         ScriptureReference = reference;
-        // Put your input
         Words = text.Split(' ').Select(w => new Word(w)).ToList();
+        
+        // This is a shorthand of the above.
         // string[] splitText = text.Split(' ');
         // Words = new List<Word>();
         // foreach (string wordText in splitText)
@@ -33,21 +35,43 @@ public class Scripture
     }
 
     public void HideRandomWords()
-{
+    {
     Random random = new Random();
-    int wordsToHide = random.Next(1, Words.Count / 4); // Hiding up to 1/4th of the words
+    int wordsToHide = random.Next(1, Words.Count / 4);
+
+    if (AreAllWordsHidden())
+    {
+        Console.WriteLine("All words are now hidden. Goodbye. ");
+        Console.WriteLine();
+        Environment.Exit(0);
+    };
 
     int hiddenCount = 0;
     while (hiddenCount < wordsToHide)
     {
+        if (AreAllWordsHidden())
+        {
+            break;
+        }
         int index = random.Next(Words.Count);
         if (!Words[index].IsHidden)
         {
             Words[index].IsHidden = true;
             hiddenCount++;
         }
-        hiddenCount++;
     }
-    //Eventually hides all words but doesn't currently check first if the words are hidden.
-}
+    }
+
+    private bool AreAllWordsHidden()
+    {
+        foreach (Word word in Words)
+        {
+           if (!word.IsHidden)
+           {
+            return false;
+           }
+        }
+        return true;
+        //check each word in Words, if .IsHidden = true for all then i need it to return true, if not continue?
+    }
 }
