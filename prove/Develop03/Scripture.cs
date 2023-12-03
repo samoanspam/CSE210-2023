@@ -72,6 +72,5 @@ public class Scripture
            }
         }
         return true;
-        //check each word in Words, if .IsHidden = true for all then i need it to return true, if not continue?
     }
 }
