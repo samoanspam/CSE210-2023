@@ -9,8 +9,7 @@ public class Word
         IsHidden = false;
     }
 
-    //TODO: Check how long word is
-    //replace each letter with underscore
+    //Check how long word is replace each letter with underscore?
     public override string ToString()
     {
         return IsHidden ? "____" : Text;

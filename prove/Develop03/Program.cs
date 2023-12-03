@@ -26,10 +26,17 @@ class Program
             Console.Clear();
             scripture.DisplayScripture();
 
-            Console.WriteLine("\nPress Enter to hide words, or type 'quit' to exit.");
+            Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
             string input = Console.ReadLine();
 
-            // Edge case: if user types something other than 'quit' what will happen?
+            while (input != "" && input.ToLower() != "quit")
+            {
+                Console.WriteLine("That is an invalid input, please try again. ");
+                Console.WriteLine();
+                Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
+                input = Console.ReadLine();
+            }
+
             if (input.ToLower() == "quit")
             {
                 Console.WriteLine("Good luck next time! Goodbye!");
