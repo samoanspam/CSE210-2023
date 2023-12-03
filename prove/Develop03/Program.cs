@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Name: Scripture Memorizer
+//Purpose: The purpose of this program is help the user to come closer to Chirst by helping them memorize a scripture that is near and dear to me.
+//Team: Teia Patane
+//Date: 12/3/2023
+
+using System;
 
 class Program
 {
