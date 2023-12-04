@@ -6,9 +6,10 @@ class Program
         while (true)
         {
             Console.WriteLine("Select an activity: ");
-            Console.WriteLine("Breathing Activity ");
-            Console.WriteLine("Reflection Activity ");
-            Console.WriteLine("Listing Activity ");
+            Console.WriteLine("1. Breathing Activity ");
+            Console.WriteLine("2. Reflection Activity ");
+            Console.WriteLine("3. Listing Activity ");
+            Console.WriteLine("4. Exit");
         
             int choice;
 
