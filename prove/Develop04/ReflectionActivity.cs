@@ -38,7 +38,7 @@ class ReflectionActivity : Activity
             foreach (var question in reflectionQuestions)
             {
                 Console.WriteLine(question);
-                PauseWithSpinner(2);
+                PauseWithSpinner(5);
             }
         }
     }
