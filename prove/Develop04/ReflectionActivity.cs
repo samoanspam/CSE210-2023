@@ -2,8 +2,8 @@ class ReflectionActivity : Activity
 {
     public ReflectionActivity()
     {
-        Name = "Reflection Activity";
-        Description = "Reflect on times in your life when you have shown strength and resilience.";
+        _name = "Reflection Activity";
+        _description = "Reflect on times in your life when you have shown strength and resilience.";
     }
 
     protected override void PerformActivity()
@@ -21,7 +21,7 @@ class ReflectionActivity : Activity
         {
             string prompt = reflectionPrompts[i % reflectionPrompts.Length];
             Console.WriteLine(prompt);
-            PauseWithSpinner(3); // Pause with spinner for 3 seconds
+            PauseWithSpinner(1);
 
             string[] reflectionQuestions = {
                 "Why was this experience meaningful to you?",
@@ -38,13 +38,8 @@ class ReflectionActivity : Activity
             foreach (var question in reflectionQuestions)
             {
                 Console.WriteLine(question);
-                PauseWithSpinner(2); // Pause with spinner for 2 seconds
+                PauseWithSpinner(2);
             }
         }
-    }
-    private int GetDuration()
-    {
-        Console.Write("Enter the duration of the activity in seconds: ");
-        return int.Parse(Console.ReadLine());
     }
 }

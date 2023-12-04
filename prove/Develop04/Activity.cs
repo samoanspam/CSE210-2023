@@ -2,12 +2,12 @@ using System;
 
 public abstract class Activity
 {
-    protected string Name;
-    protected string Description;
+    protected string _name;
+    protected string _description;
 
     public void StartActivity()
     {
-        Console.WriteLine($"Starting {Name} - {Description}");
+        Console.WriteLine($"Starting {_name} - {_description}");
         PrepareToBegin();
     }
 
@@ -35,6 +35,7 @@ public abstract class Activity
         {
             Console.Write(".");
             Thread.Sleep(1000);
+            i++;
         }
         Console.WriteLine();
     }
@@ -43,14 +44,14 @@ public abstract class Activity
 
     protected void FinishActivity()
     {
-        int Duration = GetDuration();
+        int duration = GetDuration();
         System.Console.WriteLine("Good job!");
         Countdown(3);
-        System.Console.WriteLine($"You have completed {Name} for {Duration} seconds.");
+        System.Console.WriteLine($"You have completed {_name} for {duration} seconds.");
         Countdown(3);
     }
 
-    private int GetDuration()
+    public int GetDuration()
     {
         Console.Write("Enter the duration of the activity in seconds: ");
         return int.Parse(Console.ReadLine());

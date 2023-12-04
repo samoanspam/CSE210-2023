@@ -7,8 +7,8 @@ class Program
         {
             Console.WriteLine("Select an activity: ");
             Console.WriteLine("1. Breathing Activity ");
-            Console.WriteLine("2. Reflection Activity ");
-            Console.WriteLine("3. Listing Activity ");
+            Console.WriteLine("2. Listing Activity ");
+            Console.WriteLine("3. Reflection Activity ");
             Console.WriteLine("4. Exit");
         
             int choice;
@@ -43,3 +43,5 @@ class Program
         }
     }
 }
+//TODO:
+//Fix all "i loops", get rid of unecessary countdowns, make it more pretty

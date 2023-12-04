@@ -2,8 +2,8 @@ class BreathingActivity : Activity
 {
     public BreathingActivity()
     {
-        Name = "Breathing Activity";
-        Description = "Relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        _name = "Breathing Activity";
+        _description = "Relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
 
     protected override void PerformActivity()
@@ -14,13 +14,7 @@ class BreathingActivity : Activity
         for (int i = 0; i < duration; i++)
         {
             Console.WriteLine(breatheInOutMessages[i % 2]);
-            PauseWithSpinner(3); // Pause for 3 seconds between messages
+            PauseWithSpinner(1);
         }
-    }
-
-    private int GetDuration()
-    {
-        Console.Write("Enter the duration of the activity in seconds: ");
-        return int.Parse(Console.ReadLine());
     }
 }

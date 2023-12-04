@@ -2,8 +2,8 @@ class ListingActivity : Activity
 {
     public ListingActivity()
     {
-        Name = "Listing Activity";
-        Description = "Reflect on the good things in your life by listing items in a certain area.";
+        _name = "Listing Activity";
+        _description = "Reflect on the good things in your life by listing items in a certain area.";
     }
 
     protected override void PerformActivity()
@@ -39,11 +39,5 @@ class ListingActivity : Activity
             Console.WriteLine($"You listed {itemsCount} items.");
             FinishActivity();
         }
-    }
-
-    private int GetDuration()
-    {
-        Console.Write("Enter the duration of the activity in seconds: ");
-        return int.Parse(Console.ReadLine());
     }
 }
