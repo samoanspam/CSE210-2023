@@ -16,5 +16,6 @@ class BreathingActivity : Activity
             Console.WriteLine(breatheInOutMessages[i % 2]);
             PauseWithSpinner(1);
         }
+    System.Console.WriteLine("Returning to main menu. ");
     }
 }

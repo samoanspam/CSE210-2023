@@ -40,5 +40,6 @@ class ListingActivity : Activity
             Console.WriteLine($"You listed {itemsCount} items.");
             FinishActivity();
         }
+        System.Console.WriteLine("Returning to main menu. ");
     }
 }

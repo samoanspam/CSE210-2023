@@ -3,7 +3,7 @@ class ReflectionActivity : Activity
     public ReflectionActivity()
     {
         _name = "Reflection Activity";
-        _description = "Reflect on times in your life when you have shown strength and resilience. This activity is going to give you a prompt and itterate througha list of questions to push you to relfect on past events. ";
+        _description = "Reflect on times in your life when you have shown strength and resilience. This activity is going to give you a prompt and itterate through a list of questions to push you to relfect on past events. ";
     }
 
     protected override void PerformActivity()
@@ -37,8 +37,9 @@ class ReflectionActivity : Activity
             foreach (var question in reflectionQuestions)
             {
                 Console.WriteLine(question);
-                PauseWithSpinner(5);
+                PauseWithSpinner(10);
             }
         }
+        System.Console.WriteLine("Returning to main menu. ");
     }
 }

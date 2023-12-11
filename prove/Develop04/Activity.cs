@@ -11,6 +11,13 @@ public abstract class Activity
         PrepareToBegin();
     }
 
+    public void ReflectionStartActivity()
+    {
+        Console.WriteLine($"Starting {_name} - {_description}");
+        ReflectionPrepareToBegin();
+    }
+
+
     protected void PrepareToBegin()
     {
         System.Console.WriteLine();
@@ -18,6 +25,14 @@ public abstract class Activity
         Countdown(3);
         PerformActivity();
         FinishActivity();
+    }
+
+  protected void ReflectionPrepareToBegin()
+    {
+        System.Console.WriteLine();
+        System.Console.WriteLine("Prepare to Begin");
+        Countdown(10);
+        PerformActivity();
     }
 
     protected void Countdown(int seconds)

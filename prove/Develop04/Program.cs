@@ -31,7 +31,7 @@ class Program
                     break;
                 case 3:
                     ReflectionActivity reflectionActivity = new ReflectionActivity();
-                    reflectionActivity.StartActivity();
+                    reflectionActivity.ReflectionStartActivity();
                     break;
                 case 4:
                     Environment.Exit(0);
