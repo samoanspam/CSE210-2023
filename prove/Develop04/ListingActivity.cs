@@ -3,7 +3,7 @@ class ListingActivity : Activity
     public ListingActivity()
     {
         _name = "Listing Activity";
-        _description = "Reflect on the good things in your life by listing items in a certain area.";
+        _description = "Reflect on the good things in your life by listing items in a certain area. You will continue until you input a blank statement. The program will then count your responses.";
     }
 
     protected override void PerformActivity()
@@ -16,6 +16,7 @@ class ListingActivity : Activity
             "Who are some of your personal heroes?"
         };
 
+        System.Console.WriteLine("How many times do you want to write a list to different responses? ");
         int duration = GetDuration();
 
         for (int i = 0; i < duration; i++)

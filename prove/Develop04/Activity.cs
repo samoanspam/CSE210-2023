@@ -14,6 +14,7 @@ public abstract class Activity
     protected void PrepareToBegin()
     {
         System.Console.WriteLine();
+        System.Console.WriteLine("Prepare to Begin");
         Countdown(3);
         PerformActivity();
         FinishActivity();
@@ -46,14 +47,13 @@ public abstract class Activity
     {
         int duration = GetDuration();
         System.Console.WriteLine("Good job!");
-        Countdown(3);
         System.Console.WriteLine($"You have completed {_name} for {duration} seconds.");
         Countdown(3);
     }
 
     public int GetDuration()
     {
-        Console.Write("Enter the duration of the activity in seconds: ");
+        Console.Write("Enter the duration of the activity in seconds/amount of times you'd like to do it: ");
         return int.Parse(Console.ReadLine());
     }
 /*     public void PauseAnimation(int delay)
