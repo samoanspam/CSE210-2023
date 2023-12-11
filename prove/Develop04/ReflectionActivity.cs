@@ -3,7 +3,7 @@ class ReflectionActivity : Activity
     public ReflectionActivity()
     {
         _name = "Reflection Activity";
-        _description = "Reflect on times in your life when you have shown strength and resilience.";
+        _description = "Reflect on times in your life when you have shown strength and resilience. This activity is going to give you a prompt and itterate througha list of questions to push you to relfect on past events. ";
     }
 
     protected override void PerformActivity()
@@ -15,9 +15,8 @@ class ReflectionActivity : Activity
             "Think of a time when you did something truly selfless."
         };
 
-        int duration = GetDuration();
 
-        for (int i = 0; i < duration; i++)
+        for (int i = 0; i < 1; i++)
         {
             string prompt = reflectionPrompts[i % reflectionPrompts.Length];
             Console.WriteLine(prompt);
