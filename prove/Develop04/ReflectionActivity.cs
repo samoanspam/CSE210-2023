@@ -33,8 +33,15 @@ class ReflectionActivity : Activity
                 "What did you learn about yourself through this experience?",
                 "How can you keep this experience in mind in the future?"
             };
+            
 
-            foreach (var question in reflectionQuestions)
+            Random random = new Random();
+            string[] shuffledQuestions = reflectionQuestions.OrderBy(q => random.Next()).ToArray();
+
+            int questionsToChoose = 5;
+            string[] selectedQuestions = shuffledQuestions.Take(questionsToChoose).ToArray();
+
+            foreach (var question in selectedQuestions)
             {
                 Console.WriteLine(question);
                 PauseWithSpinner(10);

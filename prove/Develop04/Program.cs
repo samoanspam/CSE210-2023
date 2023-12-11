@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 class Program
 {
     static void Main()
@@ -34,6 +35,7 @@ class Program
                     reflectionActivity.ReflectionStartActivity();
                     break;
                 case 4:
+                    System.Console.WriteLine("Thank you for participating! Goodbye. ");
                     Environment.Exit(0);
                     break;
                 default:
@@ -44,4 +46,7 @@ class Program
     }
 }
 //TODO:
-//Fix all "i loops", get rid of unecessary countdowns, make it more pretty
+//Fix all "i loops", get rid of unecessary countdowns, make it more pretty  X
+//Add a limit/random list to reflection activity X
+//Change parameters to listing activity X
+//Fix edge case in main menu X

@@ -7,12 +7,14 @@ public abstract class Activity
 
     public void StartActivity()
     {
+        System.Console.WriteLine();
         Console.WriteLine($"Starting {_name} - {_description}");
         PrepareToBegin();
     }
 
     public void ReflectionStartActivity()
     {
+        System.Console.WriteLine();
         Console.WriteLine($"Starting {_name} - {_description}");
         ReflectionPrepareToBegin();
     }
@@ -62,7 +64,7 @@ public abstract class Activity
     {
         int duration = GetDuration();
         System.Console.WriteLine("Good job!");
-        System.Console.WriteLine($"You have completed {_name} for {duration} seconds.");
+        System.Console.WriteLine($"You have completed {_name} for {duration} seconds/times. ");
         Countdown(3);
     }
 
@@ -71,6 +73,8 @@ public abstract class Activity
         Console.Write("Enter the duration of the activity in seconds/amount of times you'd like to do it: ");
         return int.Parse(Console.ReadLine());
     }
+
+    
 /*     public void PauseAnimation(int delay)
     {
         int timer = 1;
