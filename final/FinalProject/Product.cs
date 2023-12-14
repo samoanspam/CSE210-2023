@@ -1,11 +1,25 @@
-class Product
-{
-    private int prodcutId;
-    public string name;
-    public double price;
+using System;
 
-    public int getProductId()
+public class Product
+{
+    public int Id { get; private set; }
+    public string Name { get; set; }
+    public double Price { get; set; }
+
+    public Product(int id, string name, double price)
     {
-        return 0;
+        Id = id;
+        Name = name;
+        Price = price;
+    }
+
+    public void displayDetails()
+    {
+        System.Console.WriteLine($"Product ID: {Id}");
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Name: {Name}");
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Price: ${Price}");
+        System.Console.WriteLine();
     }
 }

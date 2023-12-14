@@ -1,0 +1,18 @@
+Order ID: 2
+Order Date: 12/13/2023 10:12:58 PM
+Customer Information:
+Customer ID: 1
+Name: Alice
+Email: alice@email.com
+Address: 123 Main St
+Products in the order:
+Product ID: 2
+Name: Smartphone
+Price: $599.99
+Product ID: 4
+Name: Tablet
+Price: $299.99
+Product ID: 5
+Name: Camera
+Price: $449.99
+Total Amount: $1349.97

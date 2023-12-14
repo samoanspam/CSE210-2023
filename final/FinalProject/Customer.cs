@@ -1,29 +1,30 @@
-using System.Reflection.Emit;
+using System;
 
-class Customer
+public class Customer
 {
-    private string email;
-    private string address;
-    public int customerId;
-    public string name;
+    public int Id { get; private set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Address { get; set; }
 
-    private void UpdateProfile()
+    public Customer(int id, string name, string email, string address)
     {
-
+        Id = id;
+        Name = name;
+        Email = email;
+        Address = address;
     }
 
-    private bool ValidatePayment()
+    //Send in a User object to parse through and display details.
+    public void displayDetails()
     {
-        return false;
-    }
-
-    public void Register()
-    {
-
-    }
-
-    public void PlaceOrder()
-    {
-
+        System.Console.WriteLine($"Customer ID: {Id}");
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Name: {Name}");
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Email: {Email}");
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Address: {Address}");
+        System.Console.WriteLine();
     }
 }
