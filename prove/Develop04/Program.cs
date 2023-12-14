@@ -1,3 +1,8 @@
+//Name: Activity Program
+//Purpose: The purpose of this program is help the user to complete certain activities to enhance their lives overall.
+//Team: Teia Patane
+//Date: 12/10/2023
+
 using System;
 using System.Linq;
 class Program

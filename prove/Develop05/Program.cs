@@ -1,3 +1,8 @@
+//Name: Goal Program
+//Purpose: The purpose of this program is help the user improve their lives incrementally by completing goals over time.
+//Team: Teia Patane
+//Date: 12/12/2023
+
 using System;
 
 class Program
