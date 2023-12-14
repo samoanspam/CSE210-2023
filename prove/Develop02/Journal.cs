@@ -12,16 +12,16 @@ class Journal
     public static void DisplayJournal()
     {
         if(journal.Count == 0){
-            Console.WriteLine("Journal is empty!");
-            Console.WriteLine();
+            System.Console.WriteLine("Journal is empty!");
+            System.Console.WriteLine();
         }
 
         foreach (Journal listing in journal)
         {
-            Console.WriteLine("Prompt: " + listing.Prompt);
-            Console.WriteLine("Response: " + listing.Response);
-            Console.WriteLine("Date: " + listing.Date);
-            Console.WriteLine();
+            System.Console.WriteLine("Prompt: " + listing.Prompt);
+            System.Console.WriteLine("Response: " + listing.Response);
+            System.Console.WriteLine("Date: " + listing.Date);
+            System.Console.WriteLine();
         }
     }
 
@@ -68,8 +68,8 @@ static public void LoadJournal()
             journal.Add(entry);
         }
     }
-    Console.WriteLine("Journal successfully loaded!");
-    Console.WriteLine();
+    System.Console.WriteLine("Journal successfully loaded!");
+    System.Console.WriteLine();
 }
 
 static public void DeleteJournal()
@@ -83,13 +83,13 @@ static public void DeleteJournal()
     {
         // Clears the contents of the file by writing an empty string to it.
         File.WriteAllText(fileName, String.Empty);
-        Console.WriteLine("All contents of your Journal have been cleared.");
+        System.Console.WriteLine("All contents of your Journal have been cleared.");
     }
         //Not using a while loop to check for fileName because it'll force you to delete if accidental input,
         //
     else
     {
-        Console.WriteLine("File not found. Please make sure the filename is correct.");
+        System.Console.WriteLine("File not found. Please make sure the filename is correct.");
     }
 }
 

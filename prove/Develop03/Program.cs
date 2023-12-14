@@ -31,20 +31,20 @@ class Program
             Console.Clear();
             scripture.DisplayScripture();
 
-            Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
+            System.Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
             string input = Console.ReadLine();
 
             while (input != "" && input.ToLower() != "quit")
             {
-                Console.WriteLine("That is an invalid input, please try again. ");
-                Console.WriteLine();
-                Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
+                System.Console.WriteLine("That is an invalid input, please try again. ");
+                System.Console.WriteLine();
+                System.Console.WriteLine("Press Enter to hide words, or type 'quit' to exit.");
                 input = Console.ReadLine();
             }
 
             if (input.ToLower() == "quit")
             {
-                Console.WriteLine("Good luck next time! Goodbye!");
+                System.Console.WriteLine("Good luck next time! Goodbye!");
                 break;
             }
 

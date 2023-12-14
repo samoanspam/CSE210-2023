@@ -13,12 +13,12 @@ class Program
     {
         while (true)
         {
-            Console.WriteLine("1. Write a New Entry. ");
-            Console.WriteLine("2. Display the Journal. ");
-            Console.WriteLine("3. Save Journal to a file. ");
-            Console.WriteLine("4. Load Journal from file");
-            Console.WriteLine("5. Delete the Journal. ");
-            Console.WriteLine("6. Exit. ");
+            System.Console.WriteLine("1. Write a New Entry. ");
+            System.Console.WriteLine("2. Display the Journal. ");
+            System.Console.WriteLine("3. Save Journal to a file. ");
+            System.Console.WriteLine("4. Load Journal from file");
+            System.Console.WriteLine("5. Delete the Journal. ");
+            System.Console.WriteLine("6. Exit. ");
 
             string choice = Console.ReadLine();
             if (choice == "1")
@@ -47,7 +47,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Invalid choice. Please try again.");
+                System.Console.WriteLine("Invalid choice. Please try again.");
             }
         }
     }

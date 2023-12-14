@@ -25,8 +25,8 @@ public class Scripture
 
     public void DisplayScripture()
     {
-        Console.WriteLine(ScriptureReference.ToString());
-        Console.WriteLine(string.Join(" ", Words.Select(w => w.ToString())));
+        System.Console.WriteLine(ScriptureReference.ToString());
+        System.Console.WriteLine(string.Join(" ", Words.Select(w => w.ToString())));
     }
 
     public void HideRandomWords()
@@ -36,8 +36,8 @@ public class Scripture
 
     if (AreAllWordsHidden())
     {
-        Console.WriteLine("All words are now hidden. Goodbye. ");
-        Console.WriteLine();
+        System.Console.WriteLine("All words are now hidden. Goodbye. ");
+        System.Console.WriteLine();
         Environment.Exit(0);
     };
 
